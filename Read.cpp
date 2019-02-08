@@ -41,6 +41,16 @@ int main(){
     }
     printf("\n");
     delay(1000);
+    break;
   }
+
+  byte buffer[4] = { 0x00 };
+  buffer[0] = 0x9E;
+  buffer[1] = 0x3B;
+  buffer[2] = 0x63;
+  buffer[3] = 0x61;
+  mfrc.MIFARE_OpenUidBackdoor(true);
+  mfrc.MIFARE_SetUid(buffer, byte(4), true);
+
   return 0;
 }

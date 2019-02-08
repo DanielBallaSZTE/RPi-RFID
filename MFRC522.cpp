@@ -895,7 +895,7 @@ byte MFRC522::MIFARE_Write(	byte blockAddr, ///< MIFARE Classic: The block (0-0x
   cmdBuffer[1] = blockAddr;
   result = PCD_MIFARE_Transceive(cmdBuffer, 2); // Adds CRC_A and checks that the response is MF_ACK.
   if (result != STATUS_OK) {
-    return result;
+//    return result;
   }
 	
   // Step 2: Transfer the data
